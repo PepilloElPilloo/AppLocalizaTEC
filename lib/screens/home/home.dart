@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:localizatec_app2/screens/drawer/sidemenu.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -49,17 +48,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideMenu(
-        onSearchTextChanged: (text) {
-          setState(() {
-            searchQuery = text;
-          });
-        },
-      ),
-      appBar: AppBar(
-        title: const Text('Inicio', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color.fromRGBO(156, 42, 42, 1),
-      ),
       body: Container(
         color: Colors.white,
         child: SafeArea(

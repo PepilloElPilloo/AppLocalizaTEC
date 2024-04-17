@@ -38,8 +38,12 @@ dependencies:
   sqflite: ^2.3.3
   path_provider: ^2.0.0
   path: ^1.8.0
-  flutter_map: ^0.13.1
-  latlong2: ^0.8.2
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.0
+  google_fonts: ^6.2.1
+  http: ^1.2.1
+  google_nav_bar: ^5.0.6
+
   
 dev_dependencies:
   flutter_test:

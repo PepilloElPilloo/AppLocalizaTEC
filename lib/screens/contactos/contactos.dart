@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:localizatec_app2/screens/drawer/sidemenu.dart';
+
 
 class Contactos extends StatefulWidget {
   const Contactos({Key? key}) : super(key: key);
@@ -23,13 +23,6 @@ class _ContactosState extends State<Contactos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideMenu(
-        onSearchTextChanged: (String) {},
-      ),
-      appBar: AppBar(
-        title: const Text('Contactos', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color.fromRGBO(156, 42, 42, 1),
-      ),
       body: ListView.builder(
         itemCount: contactos.length,
         itemBuilder: (context, index) {

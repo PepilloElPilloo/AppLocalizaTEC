@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:localizatec_app2/screens/drawer/sidemenu.dart';
-import 'package:localizatec_app2/screens/home/home.dart';
 
 class Horarios extends StatefulWidget {
   const Horarios({Key? key}) : super(key: key);
@@ -13,15 +11,6 @@ class _HorariosState extends State<Horarios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideMenu(
-        onSearchTextChanged: (searchText) {
-          Home.of(context)?.updateMarkersVisibility(searchText);
-        },
-      ),
-        appBar: AppBar(
-        title: const Text('Horarios', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color.fromRGBO(156, 42, 42, 1),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

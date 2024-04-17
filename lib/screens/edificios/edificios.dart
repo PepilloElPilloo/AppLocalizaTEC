@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:localizatec_app2/screens/drawer/sidemenu.dart';
-import 'package:localizatec_app2/screens/home/home.dart';
 import 'package:localizatec_app2/screens/aulas/Edificio_R.dart';
 import 'package:localizatec_app2/screens/aulas/Edificio_Y.dart';
 import 'package:localizatec_app2/screens/aulas/Edificio_K.dart';
@@ -48,18 +46,6 @@ class _EdificiosState extends State<Edificios> {
     }).toList();
 
     return Scaffold(
-      drawer: SideMenu(
-        onSearchTextChanged: (searchText) {
-          setState(() {
-            searchQuery = searchText;
-          });
-          Home.of(context)?.updateMarkersVisibility(searchText);
-        },
-      ),
-      appBar: AppBar(
-        title: const Text('Edificios', style: TextStyle(color: Colors.white)),
-        backgroundColor: Color.fromRGBO(156, 42, 42, 1),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
