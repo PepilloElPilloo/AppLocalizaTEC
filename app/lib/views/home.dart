@@ -5,7 +5,10 @@ import 'package:localizatec_app2/screens/edificios/edificios.dart';
 import 'package:localizatec_app2/screens/horarios/horarios.dart';
 import 'package:localizatec_app2/views/login.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:localizatec_app2/screens/home/home.dart';
+import 'package:localizatec_app2/views/map.dart';
+
+
+
 
 class HomePage extends StatefulWidget {
     const HomePage({Key? key}) : super(key: key);
@@ -28,7 +31,7 @@ class _HomePageState extends State<HomePage> {
 
 
     final List<Widget> _pages = [
-        const Home(),
+        const Mapping(),
         const Horarios(),
         const Edificios(),
         const Contactos(),
@@ -74,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                 ],
                 
             ),
-            drawer:  NavigationDrawerWidget( ),
+            drawer: isLogin ?  NavigationDrawerWidget( ) : null ,
             bottomNavigationBar:  isLogin ? navbar() : null, 
         );
     }

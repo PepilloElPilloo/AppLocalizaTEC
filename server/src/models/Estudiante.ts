@@ -10,7 +10,7 @@ class Estudiante extends Model {
     public apellido_paterno!: string;
     public apellido_materno!: string;
     public carrera!: string;
-    public horario!: string;
+    public horarios!: number[];
 }
 
 Estudiante.init(
@@ -36,9 +36,10 @@ Estudiante.init(
             type: DataTypes.CHAR(3),
             allowNull: false
         },
-        horario: {
-            type: DataTypes.CHAR(5),
-            allowNull: false
+        horarios: {
+            type: DataTypes.ARRAY(DataTypes.INTEGER), // Array de enteros (IDs de correos)
+            allowNull: true,
+            defaultValue: [],
         }
     },
     {
@@ -48,12 +49,19 @@ Estudiante.init(
 );
 
 
-Estudiante.hasOne(Horario, {
-    sourceKey: 'horario',
-    foreignKey: 'id'
-})
 
 Estudiante.hasOne(Carrera, {
     sourceKey: 'carrera',
     foreignKey: 'carrera'
 })
+
+Estudiante.hasMany(Horario, {
+    sourceKey: 'horarios',
+    foreignKey: 'id',
+    as: 'horarios_estudiante'
+})
+
+
+
+
+export default Estudiante;

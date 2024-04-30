@@ -37,11 +37,19 @@ class _EdificiosState extends State<Edificios> {
 
   String searchQuery = '';
 
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> filteredEdificios = edificios.where((edificio) {
       final nombre = edificio['nombre'].toString().toLowerCase();
       final query = searchQuery.toLowerCase();
+
+      
       return nombre.contains(query);
     }).toList();
 

@@ -1,4 +1,7 @@
 import { Model, DataTypes } from "sequelize";
+import Personal from "./Personal";
+import Aula from "./Aulas";
+import Materia from "./Materias";
 import db from "../db";
 
 class Horario extends Model {
@@ -41,7 +44,7 @@ Horario.init(
 			type: DataTypes.CHAR(5),
 			allowNull: true,
 		},
-		rfc: { // this suposed to be a Reference Key, but the developer left it as RFC.
+		rfc: { // this suposed to be a Reference Key to profesor, but the developer left it as RFC.
 			type: DataTypes.CHAR(13),
 			allowNull: true,
 		},
@@ -126,6 +129,24 @@ Horario.init(
 		modelName: "Horario", // nombre del modelo en singular
 	}
 );
+
+Horario.hasOne(Personal, {
+	sourceKey: "rfc",
+	foreignKey: "rfc",
+	as: "personal",
+});
+
+Horario.hasOne(Aula, {
+	sourceKey: "aula",
+	foreignKey: "aula",
+	as: "sala",
+});
+
+Horario.hasOne(Materia, {
+	sourceKey: "materia",
+	foreignKey: "materia",
+	as: "mat",
+});
 
 /* 
 periodo 20203	

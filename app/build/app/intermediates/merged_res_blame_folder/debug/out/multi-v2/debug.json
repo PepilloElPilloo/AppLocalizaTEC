@@ -173,7 +173,7 @@
                     }
                 },
                 {
-                    "source": "F:\\pepekun\\AppLocalizaTEC\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "F:\\pepekun\\AppLocalizaTEC\\app\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -1012,7 +1012,7 @@
             "outputFile": "com.example.localizatec_app2.app-merged_res-11:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "F:\\pepekun\\AppLocalizaTEC\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "F:\\pepekun\\AppLocalizaTEC\\app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

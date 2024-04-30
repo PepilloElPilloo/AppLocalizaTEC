@@ -1,13 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:localizatec_app2/components/infopage.dart';
+import 'package:localizatec_app2/controller/session.dart';
+//import 'package:localizatec_app2/components/infopage.dart';
 import 'package:localizatec_app2/views/home.dart';
+import 'dart:convert';
 
 
-class NavigationDrawerWidget extends StatelessWidget {
+class NavigationDrawerWidget extends StatefulWidget {
+  // ignore: non_constant_identifier_names
+  const NavigationDrawerWidget({Key? key}) : super(key: key);
+
+  _NavigationDrawerWidgetState createState() => _NavigationDrawerWidgetState();
+}
+
+class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   // ignore: non_constant_identifier_names
   final Padding = const EdgeInsets.symmetric(horizontal: 10, vertical: 30);
 
-  const NavigationDrawerWidget({super.key});
+
+  final Session session = Session();
+
+
+  Map<String, dynamic>? responseData;
+
+  Future<void> fetchData() async {
+
+    final response = await session.get('/api/auth/');
+
+    if(response.statusCode == 200) {
+      setState(() {
+        responseData =  jsonDecode(response.body) ;
+      });
+
+
+    }
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -21,6 +55,26 @@ class NavigationDrawerWidget extends StatelessWidget {
               padding: Padding,
               child: Column(
                 children: [
+                  Row(
+                    children: [
+                      const SizedBox(width: 20),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "${responseData?['nombre']  } ${responseData?['apellido_paterno']}",
+                            style: const TextStyle(fontSize: 20, color: Colors.white),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            'Estudiante',
+                            style: const TextStyle(fontSize: 14, color: Colors.white),
+                          ),
+                        ],
+                      )
+                    ],
+
+                  ),
                   const SizedBox(
                     height: 12,
                   ),
