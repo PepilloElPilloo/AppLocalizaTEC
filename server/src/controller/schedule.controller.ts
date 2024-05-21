@@ -112,9 +112,8 @@ export async function get( req: Request, response: Response) {
         // remove space from edificio name
 
         const building = data.find( (val: any) => val.edificio.replace(/\s/g, '') === req.query.aulas );
-
         console.log(building.horarios)
-        if(building) return response.json(building).end();
+        if(building) return response.json(building.horarios).end();
         return response.json([]).end();
     }
 
