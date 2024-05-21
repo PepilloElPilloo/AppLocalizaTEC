@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:localizatec_app2/controller/session.dart';
 
 // Supongamos que tienes una clase para representar los datos de un curso
 class Curso {
@@ -18,6 +21,7 @@ class Curso {
     required this.hora,
   });
 }
+
 
 // Esta función simula la obtención de datos de la base de datos
 Future<List<Curso>> obtenerCursos() async {
@@ -94,23 +98,45 @@ class Edificio_R extends StatefulWidget {
 }
 
 class _AulasState extends State<Edificio_R> {
-  late Future<List<Curso>> _cursosFuture;
+
+
+  Session session = Session();
+
+
+    
+
+    Future<List<dynamic>>  getData() async {
+
+      final response = await session.get('/api/schedule?aulas=EdificioR');
+      
+      if(response.statusCode == 200) {
+        final data = jsonDecode(response.body) as List<dynamic>;
+        return data; 
+      }
+
+      return [];
+    }
+
+
 
   @override
   void initState() {
     super.initState();
-    _cursosFuture = obtenerCursos();
   }
 
   @override
   Widget build(BuildContext context) {
+
+    final Future<List<dynamic> > edificioData = getData();
+
+
     return Scaffold(
        appBar: AppBar(
         title: const Text('Edificio R', style: TextStyle(color: Colors.white)),
         backgroundColor: Color.fromRGBO(156, 42, 42, 1),
       ),
-      body: FutureBuilder<List<Curso>>(
-        future: _cursosFuture,
+      body: FutureBuilder<List<dynamic>>(
+        future: edificioData,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
@@ -143,10 +169,7 @@ class _AulasState extends State<Edificio_R> {
                         ),
                         SizedBox(height: 8),
                         Text('Maestro: ${curso.maestro}'),
-                        Text('Materia: ${curso.materia}'),
-                        Text('Carrera: ${curso.carrera}'),
-                        Text('Semestre: ${curso.semestre}'),
-                        Text('Hora: ${curso.hora}'),
+                    
                       ],
                     ),
                   ),

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\CMakeFiles\33240de2af210f649be2c48f3885b4af\INSTALL_force.rule">
+    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\CMakeFiles\9dc210cb40fa79111fa6e6b026eb8be6\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{FA984C60-1637-3C59-AA10-3AA9B1F21CCD}</UniqueIdentifier>
+      <UniqueIdentifier>{14A9ED5B-4782-3067-8899-415C91237916}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-#Tue Apr 30 07:19:38 CDT 2024
+#Tue May 21 14:49:51 CDT 2024
 base.0=F\:\\pepekun\\AppLocalizaTEC\\app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,6 +1,6 @@
-^F:\PEPEKUN\APPLOCALIZATEC\BUILD\WINDOWS\X64\CMAKEFILES\582D002A8E6BE8A35FB29E95AA71583C\GENERATE.STAMP.RULE
+^F:\PEPEKUN\APPLOCALIZATEC\APP\BUILD\WINDOWS\X64\CMAKEFILES\2401138332C242192D664CB2AA2E4536\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/pepekun/AppLocalizaTEC/build/windows/x64/localizatec_app2.sln
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/localizatec_app2.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -1,4 +1,4 @@
-# Install script for directory: F:/pepekun/AppLocalizaTEC/windows/flutter
+# Install script for directory: F:/pepekun/AppLocalizaTEC/app/windows/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

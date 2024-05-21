@@ -21,7 +21,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E5D4FB33-7172-362D-AFD0-C2EC2F7D1E70}</ProjectGuid>
+    <ProjectGuid>{DBC03EFC-B36F-3BA3-BF91-B1C8C5857C5B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -88,11 +88,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\windows\runner\CMakeLists.txt">
+    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/app/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -101,11 +101,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/app/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -114,11 +114,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/app/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -127,21 +127,21 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\ZERO_CHECK.vcxproj">
-      <Project>{7634B0BC-B5DF-3B53-854C-CA482DC869BF}</Project>
+    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\ZERO_CHECK.vcxproj">
+      <Project>{9EE1F634-8E08-3CD8-9259-11295D1D47B3}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\localizatec_app2.vcxproj">
-      <Project>{CD850D68-80F0-364B-BC77-5B0CDE6FD182}</Project>
+    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\localizatec_app2.vcxproj">
+      <Project>{43AE5D66-4A5B-3DB4-A150-09D7E045B572}</Project>
       <Name>localizatec_app2</Name>
     </ProjectReference>
   </ItemGroup>

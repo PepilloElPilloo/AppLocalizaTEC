@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\CMakeFiles\1de21efef8776985f44cf2e5d07c2ae1\flutter_windows.dll.rule">
+    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\CMakeFiles\e96bd2f8a699efb46fffb1fd4ecaf5ac\flutter_windows.dll.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\CMakeFiles\c2b250702060c364c7181fda97abc509\flutter_assemble.rule">
+    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\CMakeFiles\ba31930ca06a94f2f9802fb836f8b446\flutter_assemble.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\windows\flutter\CMakeLists.txt" />
+    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\app\windows\flutter\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\flutter\CMakeFiles\flutter_assemble" />
+    <None Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\flutter\CMakeFiles\flutter_assemble" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{FA984C60-1637-3C59-AA10-3AA9B1F21CCD}</UniqueIdentifier>
+      <UniqueIdentifier>{14A9ED5B-4782-3067-8899-415C91237916}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

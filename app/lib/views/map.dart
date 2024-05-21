@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localizatec_app2/components/Marker.dart';
 import 'package:localizatec_app2/controller/session.dart';
 import 'dart:convert';
 
@@ -11,14 +12,41 @@ class Mapping extends StatefulWidget {
 
 }
 
+
+
+
+class Horario {
+  final String materia;
+  final String grupo;
+  final String aula;
+  final String maestro;
+  final String startAt;
+  final String endAt;
+
+  Horario({required this.materia, required this.grupo, required this.aula, required this.maestro, required this.startAt, required this.endAt});
+
+  factory Horario.fromJson(Map<String, dynamic> json) {
+    return Horario(
+      materia: json['materia'],
+      grupo: json['grupo'],
+      aula: json['aula'],
+      maestro: json['maestro'],
+      startAt: json['startAt'],
+      endAt: json['endAt']
+    );
+  }
+}
+
 class _MapState extends State<Mapping> {
 
   final Session session = Session();
 
+  late Future<List<Horario>> futureSalones;
+
   final List<CustomMarker> markers = [
     CustomMarker(leftFraction: 0.50, topFraction: 0.25, info: 'Edificio S', info2: 'S', aulas: [ 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8'  ], info3: 'Laboratorio Computo'),
     CustomMarker(leftFraction: 0.21, topFraction: 0.36, info: 'Edificio R', info2: 'R', aulas: [ 'R1', 'R2', '43', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10', 'R11'  ], info3: 'R'),
-    /*CustomMarker(leftFraction: 0.55, topFraction: 0.47, info: 'Templo', info2: 'Edificio A', info3: 'Direccion'),
+    CustomMarker(leftFraction: 0.55, topFraction: 0.47, info: 'Templo', info2: 'Edificio A', info3: 'Direccion'),
     CustomMarker(leftFraction: 0.22, topFraction: 0.34, info: 'Sala de maestros', info2: 'maestros', info3: 'Sala de maestros'),
     CustomMarker(leftFraction: 0.20, topFraction: 0.38, info: 'Edificio Y', info2: 'Y', info3: 'Y'),
     CustomMarker(leftFraction: 0.20, topFraction: 0.45, info: 'Gimnasio', info2: 'GYM', info3: 'GYM'),
@@ -45,28 +73,38 @@ class _MapState extends State<Mapping> {
     CustomMarker(leftFraction: 0.34, topFraction: 0.13, info: 'Laboratorio Ingenieria Química', info2: 'Lab Quimica', info3: 'Quimica'),
     CustomMarker(leftFraction: 0.38, topFraction: 0.20, info: 'Edificio U', info2: 'U', info3: 'U'),
     CustomMarker(leftFraction: 0.34, topFraction: 0.20, info: 'Edificio T', info2: 'T', info3: 'T'),
-    CustomMarker(leftFraction: 0.32, topFraction: 0.24, info: 'Unidad de vinculación', info2: 'Vinculacion', info3: 'Unidad de vinculacion')*/
+    CustomMarker(leftFraction: 0.32, topFraction: 0.24, info: 'Unidad de vinculación', info2: 'Vinculacion', info3: 'Unidad de vinculacion')
   ];
 
   String searchQuery = 'r';
 
-  Future<List<dynamic>>  getData() async {
+  Future<List<Horario>>  getData() async {
 
     final response = await session.get('/api/schedule/');
-    print(response.body);
-
+    
     if(response.statusCode == 200) {
 
-      final data = jsonDecode(response.body) as List;
-      return data;
+      List<dynamic> data = json.decode(response.body);
+      return data.map((json) => Horario.fromJson(json)).toList();
     }
 
     return [];
   }
 
+  List<CustomMarker> findMarkersWithSalones(List<CustomMarker> markers, List<Horario> salones) {
+      List<String> nombresSalones = salones.map((salon) => salon.aula).toList();
+      
+      return markers.where((marker) {
+        return marker.aulas.any((aula) => nombresSalones.contains(aula));
+      }).toList();
+    }
+
+
   @override 
   void initState() {
     super.initState();
+    futureSalones = getData();
+
     //getData();
   }
 
@@ -74,17 +112,23 @@ class _MapState extends State<Mapping> {
   Widget build(BuildContext context) {
 
 
-    final Future<List<dynamic>>  horarios = getData();
+    
 
     return Scaffold(
-      body: FutureBuilder<List<dynamic>>( 
-        future: horarios,
+      body: FutureBuilder<List<Horario>>( 
+        future: futureSalones,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError || snapshot.data == null) {
-              return const Center(child: Text('Error al cargar datos'));
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return Center(child: Text('No hay salones disponibles'));
           }
+
+          List<Horario> salones = snapshot.data!;
+          List<CustomMarker> filteredMarkers = findMarkersWithSalones(markers, salones);
+
           return Container(
             color: Colors.white,
             child: SafeArea(
@@ -97,72 +141,14 @@ class _MapState extends State<Mapping> {
                   children: <Widget>[
                     Image.asset('assets/croquistec2.png'),
                     
-                    ListView.builder(
-                      itemCount: snapshot.data?.length ?? 0,
-                      itemBuilder: (context, index) { 
-
-                        //final aulas = snapshot.data?[index]['aulas'] as List;
-                        final aula = snapshot.data?[index]['aula'];
-
-                        final marker = markers.firstWhere((marker) => marker.aulas.contains(aula));
-
-        
-                        return Positioned(
-                          left: MediaQuery.of(context).size.width * marker.leftFraction,
-                          top: MediaQuery.of(context).size.height * marker.topFraction,
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 20,
-                                height: 20,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.red,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.4),
-                                      spreadRadius: 1,
-                                      blurRadius: 2,
-                                      offset: const Offset(0, 1),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(5),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.4),
-                                      spreadRadius: 1,
-                                      blurRadius: 2,
-                                      offset: const Offset(0, 1),
-                                    ),
-                                  ],
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(marker.info, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-                                    Text(marker.info2, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-                                    Text(marker.info3, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-                                    Text(aula, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-
-                      })    
+                    ...filteredMarkers.map((marker) {
+                      return Marker(leftFraction: marker.leftFraction, topFraction: marker.topFraction, info: marker.info, info2: marker.info2, info3: marker.info3, aulas: marker.aulas ); } ).toList(),
                     
                   ],
                 ),
               ),
             ),
           );
-
         },
       )
     );

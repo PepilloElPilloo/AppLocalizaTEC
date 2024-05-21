@@ -2,17 +2,18 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
 
+declare module 'express' {
+    export interface Request {
+        n_control?: string;
+    }
+}
+
 interface IPayload {
     n_control: string;
     iat: number;
     exp: number;
 }
 
-declare module 'express' {
-    export interface Request {
-        n_control?: string;
-    }
-}
 
 
 export async function validateToken( req: Request, res: Response, next: NextFunction) {

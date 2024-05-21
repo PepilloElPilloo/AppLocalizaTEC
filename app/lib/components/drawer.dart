@@ -30,8 +30,6 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
       setState(() {
         responseData =  jsonDecode(response.body) ;
       });
-
-
     }
   }
 

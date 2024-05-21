@@ -24,6 +24,7 @@ app.use('/api/auth', auth)
 app.use('/api/schedule', schedule)
 
 
+
 /*
 
 Estudiante.findAll( ).then( async (res: Estudiante[]) => {

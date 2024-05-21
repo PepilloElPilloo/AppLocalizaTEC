@@ -18,7 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CD850D68-80F0-364B-BC77-5B0CDE6FD182}</ProjectGuid>
+    <ProjectGuid>{43AE5D66-4A5B-3DB4-A150-09D7E045B572}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -50,19 +50,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">localizatec_app2.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">localizatec_app2</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\Profile\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\Profile\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">localizatec_app2.dir\Profile\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">localizatec_app2</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">localizatec_app2.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">localizatec_app2</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
@@ -71,7 +71,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -91,10 +91,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_HAS_EXCEPTIONS=0;FLUTTER_VERSION=\"1.0.0+1\";FLUTTER_VERSION_MAJOR=1;FLUTTER_VERSION_MINOR=0;FLUTTER_VERSION_PATCH=0;FLUTTER_VERSION_BUILD=1;NOMINMAX;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -102,25 +102,25 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\flutter\Debug\flutter_wrapper_app.lib;dwmapi.lib;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\flutter_windows.dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\flutter\Debug\flutter_wrapper_app.lib;dwmapi.lib;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\flutter_windows.dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/Debug/localizatec_app2.lib</ImportLibrary>
-      <ProgramDataBaseFile>F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/Debug/localizatec_app2.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/Debug/localizatec_app2.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/Debug/localizatec_app2.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <Manifest>
-      <AdditionalManifestFiles>F:\pepekun\AppLocalizaTEC\windows\runner\runner.exe.manifest;</AdditionalManifestFiles>
+      <AdditionalManifestFiles>F:\pepekun\AppLocalizaTEC\app\windows\runner\runner.exe.manifest;</AdditionalManifestFiles>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>"4100"</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -140,10 +140,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;FLUTTER_VERSION=\"1.0.0+1\";FLUTTER_VERSION_MAJOR=1;FLUTTER_VERSION_MINOR=0;FLUTTER_VERSION_PATCH=0;FLUTTER_VERSION_BUILD=1;NOMINMAX;UNICODE;_UNICODE;CMAKE_INTDIR=\"Profile\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -151,25 +151,25 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\flutter\Profile\flutter_wrapper_app.lib;dwmapi.lib;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\flutter_windows.dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\flutter\Profile\flutter_wrapper_app.lib;dwmapi.lib;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\flutter_windows.dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/Profile/localizatec_app2.lib</ImportLibrary>
-      <ProgramDataBaseFile>F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/Profile/localizatec_app2.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/Profile/localizatec_app2.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/Profile/localizatec_app2.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <Manifest>
-      <AdditionalManifestFiles>F:\pepekun\AppLocalizaTEC\windows\runner\runner.exe.manifest;</AdditionalManifestFiles>
+      <AdditionalManifestFiles>F:\pepekun\AppLocalizaTEC\app\windows\runner\runner.exe.manifest;</AdditionalManifestFiles>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>"4100"</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -189,10 +189,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_HAS_EXCEPTIONS=0;FLUTTER_VERSION=\"1.0.0+1\";FLUTTER_VERSION_MAJOR=1;FLUTTER_VERSION_MINOR=0;FLUTTER_VERSION_PATCH=0;FLUTTER_VERSION_BUILD=1;NOMINMAX;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\windows;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\pepekun\AppLocalizaTEC\app\windows;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\cpp_client_wrapper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -200,28 +200,28 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\flutter\Release\flutter_wrapper_app.lib;dwmapi.lib;F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral\flutter_windows.dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\flutter\Release\flutter_wrapper_app.lib;dwmapi.lib;F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral\flutter_windows.dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/Release/localizatec_app2.lib</ImportLibrary>
-      <ProgramDataBaseFile>F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/Release/localizatec_app2.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/Release/localizatec_app2.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/Release/localizatec_app2.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <Manifest>
-      <AdditionalManifestFiles>F:\pepekun\AppLocalizaTEC\windows\runner\runner.exe.manifest;</AdditionalManifestFiles>
+      <AdditionalManifestFiles>F:\pepekun\AppLocalizaTEC\app\windows\runner\runner.exe.manifest;</AdditionalManifestFiles>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\windows\runner\CMakeLists.txt">
+    <CustomBuild Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/app/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -230,11 +230,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/app/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -243,11 +243,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/windows/runner/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule F:/pepekun/AppLocalizaTEC/app/windows/runner/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/runner/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/runner/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -256,33 +256,33 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\pepekun\AppLocalizaTEC\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">F:\pepekun\AppLocalizaTEC\app\build\windows\x64\runner\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="F:\pepekun\AppLocalizaTEC\windows\runner\flutter_window.cpp" />
-    <ClCompile Include="F:\pepekun\AppLocalizaTEC\windows\runner\main.cpp" />
-    <ClCompile Include="F:\pepekun\AppLocalizaTEC\windows\runner\utils.cpp" />
-    <ClCompile Include="F:\pepekun\AppLocalizaTEC\windows\runner\win32_window.cpp" />
-    <ClCompile Include="F:\pepekun\AppLocalizaTEC\windows\flutter\generated_plugin_registrant.cc" />
-    <ResourceCompile Include="F:\pepekun\AppLocalizaTEC\windows\runner\Runner.rc" />
+    <ClCompile Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\flutter_window.cpp" />
+    <ClCompile Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\main.cpp" />
+    <ClCompile Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\utils.cpp" />
+    <ClCompile Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\win32_window.cpp" />
+    <ClCompile Include="F:\pepekun\AppLocalizaTEC\app\windows\flutter\generated_plugin_registrant.cc" />
+    <ResourceCompile Include="F:\pepekun\AppLocalizaTEC\app\windows\runner\Runner.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\ZERO_CHECK.vcxproj">
-      <Project>{7634B0BC-B5DF-3B53-854C-CA482DC869BF}</Project>
+    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\ZERO_CHECK.vcxproj">
+      <Project>{9EE1F634-8E08-3CD8-9259-11295D1D47B3}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\flutter\flutter_assemble.vcxproj">
-      <Project>{FD0C267D-D694-3EC1-BBA5-517AB601B9A6}</Project>
+    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\flutter\flutter_assemble.vcxproj">
+      <Project>{93887F4A-232F-3A8A-89C1-9AC0FE1B2C9D}</Project>
       <Name>flutter_assemble</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\build\windows\x64\flutter\flutter_wrapper_app.vcxproj">
-      <Project>{35ED6E48-729C-3022-BDBF-33D6F5EC2976}</Project>
+    <ProjectReference Include="F:\pepekun\AppLocalizaTEC\app\build\windows\x64\flutter\flutter_wrapper_app.vcxproj">
+      <Project>{0CD63010-4622-3AE0-AEAF-A5D56DFD4E29}</Project>
       <Name>flutter_wrapper_app</Name>
     </ProjectReference>
   </ItemGroup>

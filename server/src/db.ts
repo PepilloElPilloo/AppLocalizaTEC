@@ -17,6 +17,7 @@ async function connect() {
         await sequelize.authenticate();
         console.log("\x1b[92m[PostgresSQL] La conexion a la base de datos exitosa \x1b[39m");
         sequelize.sync();
+        // sequelize.sync({ force: true });
     } catch (error) {
         console.error("Unable to connect to the database:", error);
     }

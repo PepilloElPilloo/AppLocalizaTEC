@@ -35,6 +35,10 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> login() async {
+
+
+
+  
     final response = await http.post(
       Uri.parse('http://10.0.2.2:3000/api/auth/login'),
       body: {
@@ -42,11 +46,14 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
-    
+
 
     if (response.statusCode == 200) {
 
+
       final Session session = Session();
+
+      print(response);
 
       final authToken = getAuthTokenFromHeaders(response);
 
@@ -76,6 +83,10 @@ class _LoginPageState extends State<LoginPage> {
       
     } else {
 
+
+      print(response.statusCode);
+
+      print(response.body);
       
       widget.onLogin(false);
     }
@@ -146,6 +157,7 @@ class _LoginPageState extends State<LoginPage> {
 
               onPressed: () {
                 // Respond to button press
+                print("Pressed button");
                 login();
                 //widget.onLogin(true);
               },

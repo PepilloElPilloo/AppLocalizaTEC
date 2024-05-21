@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:localizatec_app2/controller/session.dart';
 import 'package:localizatec_app2/screens/aulas/Edificio_R.dart';
 import 'package:localizatec_app2/screens/aulas/Edificio_Y.dart';
 import 'package:localizatec_app2/screens/aulas/Edificio_K.dart';
@@ -20,6 +23,10 @@ class Edificios extends StatefulWidget {
 }
 
 class _EdificiosState extends State<Edificios> {
+
+  Session session = Session();
+
+
   List<Map<String, dynamic>> edificios = [
     {'id': 1, 'nombre': 'Edificio R', 'imagen': 'assets/user.png'},
     {'id': 2, 'nombre': 'Edificio Y', 'imagen': 'assets/fototec.png'},
@@ -38,6 +45,9 @@ class _EdificiosState extends State<Edificios> {
   String searchQuery = '';
 
 
+
+
+
   @override
   void initState() {
     super.initState();
@@ -45,6 +55,8 @@ class _EdificiosState extends State<Edificios> {
 
   @override
   Widget build(BuildContext context) {
+
+
     List<Map<String, dynamic>> filteredEdificios = edificios.where((edificio) {
       final nombre = edificio['nombre'].toString().toLowerCase();
       final query = searchQuery.toLowerCase();
@@ -52,6 +64,8 @@ class _EdificiosState extends State<Edificios> {
       
       return nombre.contains(query);
     }).toList();
+
+   
 
     return Scaffold(
       body: Padding(

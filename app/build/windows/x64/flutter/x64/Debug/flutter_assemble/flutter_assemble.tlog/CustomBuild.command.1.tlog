@@ -1,6 +1,6 @@
-^F:\PEPEKUN\APPLOCALIZATEC\BUILD\WINDOWS\X64\CMAKEFILES\1DE21EFEF8776985F44CF2E5D07C2AE1\FLUTTER_WINDOWS.DLL.RULE
+^F:\PEPEKUN\APPLOCALIZATEC\APP\BUILD\WINDOWS\X64\CMAKEFILES\E96BD2F8A699EFB46FFFB1FD4ECAF5AC\FLUTTER_WINDOWS.DLL.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter PROJECT_DIR=F:\pepekun\AppLocalizaTEC FLUTTER_ROOT=C:\flutter FLUTTER_EPHEMERAL_DIR=F:\pepekun\AppLocalizaTEC\windows\flutter\ephemeral PROJECT_DIR=F:\pepekun\AppLocalizaTEC FLUTTER_TARGET=F:\pepekun\AppLocalizaTEC\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9lNzZjOTU2NDk4ODQxZTFhYjQ1ODU3N2QzODkyMDAzZTU1M2U0ZjNjLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=F:\pepekun\AppLocalizaTEC\.dart_tool\package_config.json C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter PROJECT_DIR=F:\pepekun\AppLocalizaTEC\app FLUTTER_ROOT=C:\flutter FLUTTER_EPHEMERAL_DIR=F:\pepekun\AppLocalizaTEC\app\windows\flutter\ephemeral PROJECT_DIR=F:\pepekun\AppLocalizaTEC\app FLUTTER_TARGET=F:\pepekun\AppLocalizaTEC\app\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9lNzZjOTU2NDk4ODQxZTFhYjQ1ODU3N2QzODkyMDAzZTU1M2U0ZjNjLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=F:\pepekun\AppLocalizaTEC\app\.dart_tool\package_config.json C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -8,7 +8,7 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^F:\PEPEKUN\APPLOCALIZATEC\BUILD\WINDOWS\X64\CMAKEFILES\C2B250702060C364C7181FDA97ABC509\FLUTTER_ASSEMBLE.RULE
+^F:\PEPEKUN\APPLOCALIZATEC\APP\BUILD\WINDOWS\X64\CMAKEFILES\BA31930CA06A94F2F9802FB836F8B446\FLUTTER_ASSEMBLE.RULE
 setlocal
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -16,9 +16,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^F:\PEPEKUN\APPLOCALIZATEC\WINDOWS\FLUTTER\CMAKELISTS.TXT
+^F:\PEPEKUN\APPLOCALIZATEC\APP\WINDOWS\FLUTTER\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/windows -BF:/pepekun/AppLocalizaTEC/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/build/windows/x64/flutter/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SF:/pepekun/AppLocalizaTEC/app/windows -BF:/pepekun/AppLocalizaTEC/app/build/windows/x64 --check-stamp-file F:/pepekun/AppLocalizaTEC/app/build/windows/x64/flutter/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

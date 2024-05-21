@@ -5,7 +5,6 @@ import Estudiante from '../models/Estudiante';
 
 
 export async function login(req: Request, res: Response) {
-    
 
     const results = validateLogin(req.body);
     if (!results.success) return res.status(400).json( { message: results.error.issues[0].message } );
@@ -15,6 +14,7 @@ export async function login(req: Request, res: Response) {
         }
     } )
     if(!student) return res.status(404).json( { message: 'Estudiante no encontrado' } );
+    
     const token = jwt.sign({ n_control: student.n_control }, process.env.JWTOKEN || 'development', {
         expiresIn: 60 * 60 * 24
     });
