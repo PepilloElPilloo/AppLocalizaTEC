@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:localizatec_app2/components/drawer.dart';
+import 'package:localizatec_app2/components/search.dart';
 import 'package:localizatec_app2/screens/contactos/contactos.dart';
 import 'package:localizatec_app2/screens/edificios/edificios.dart';
+import 'package:localizatec_app2/screens/home/home.dart';
 import 'package:localizatec_app2/screens/horarios/horarios.dart';
 import 'package:localizatec_app2/views/login.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -20,7 +22,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
     int _selectedIndex = 0;
-    bool isLogin = false;
+    bool isLogin = true;
+
+    String _searchResult = '';
+
+    void _onSearchResult(String result) {
+      setState(() {
+        _searchResult = result;
+      });
+    }
 
 
     void setUserLogin(bool state) {
@@ -31,7 +41,7 @@ class _HomePageState extends State<HomePage> {
 
 
     final List<Widget> _pages = [
-        const Mapping(),
+        HomeMap(),
         const Horarios(),
         const Edificios(),
         const Contactos(),
@@ -50,7 +60,7 @@ class _HomePageState extends State<HomePage> {
     Widget build(BuildContext context) {
         return Scaffold(
             backgroundColor: Colors.white,
-            body:  isLogin ?  _pages[_selectedIndex] : LoginPage( onLogin: (state) => setUserLogin(state) ),
+            body:  isLogin ? _selectedIndex == 0 ? HomeMap( searchQuery: _searchResult  ) :  _pages[_selectedIndex] : LoginPage( onLogin: (state) => setUserLogin(state) ),
             appBar: AppBar(
                 iconTheme: const IconThemeData(color: Colors.black),
                 centerTitle: true,
@@ -71,7 +81,22 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                         ),
                         onPressed: () {
-                        //showSearch(context: context, delegate: NegociosSearchDelegate());
+
+                          if(_selectedIndex != 0)  {
+                            setState(() {
+                              _selectedIndex = 0;
+                            });
+                          }
+
+                          showSearch(context: context, delegate: BuildSearchDelegate()).then((value) {
+                            if( value == null) { 
+                              _onSearchResult('');
+                              return;
+                            }
+
+                            _onSearchResult(value);
+                          });
+                          
                         },
                     ),
                 ],

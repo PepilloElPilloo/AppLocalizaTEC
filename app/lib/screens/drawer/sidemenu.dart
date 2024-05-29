@@ -72,7 +72,7 @@ class _SideMenuState extends State<SideMenu> {
             onTap: () {
               closeDrawer(); // Cerrar el cajón lateral
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+                  context, MaterialPageRoute(builder: (context) => HomeMap()));
             },
           ),
           ListTile(

@@ -21,7 +21,7 @@ class _FabTabsState extends State<FabTabs> {
   }
 
   final List<Widget> pages = [
-    const Home(),
+    const HomeMap(),
     const Edificios(),
     const Horarios(),
     const Contactos(),
@@ -31,7 +31,7 @@ class _FabTabsState extends State<FabTabs> {
   @override
   Widget build(BuildContext context) {
     Widget currentScreen = apartadoActual == 0
-        ? const Home()
+        ? const HomeMap()
         : apartadoActual == 1
             ? const Edificios()
             : apartadoActual == 2
@@ -58,7 +58,7 @@ class _FabTabsState extends State<FabTabs> {
                 minWidth: 50,
                 onPressed: () {
                   setState(() {
-                    currentScreen = const Home();
+                    currentScreen = const HomeMap();
                     apartadoActual = 0;
                   });
                 },

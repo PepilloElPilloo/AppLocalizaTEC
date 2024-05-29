@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class HomeMap extends StatefulWidget {
+
+
+  final String searchQuery;
+
+  const HomeMap({Key? key,  this.searchQuery = ''}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeMap> createState() => _HomeState();
 
   static of(BuildContext context) {}
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<HomeMap> {
   final List<CustomMarker> markers = [
     CustomMarker(leftFraction: 0.50, topFraction: 0.25, info: 'Edificio S', info2: 'S', info3: 'Laboratorio Computo'),
     CustomMarker(leftFraction: 0.21, topFraction: 0.36, info: 'Edificio R', info2: 'R', info3: 'R'),
@@ -43,10 +47,13 @@ class _HomeState extends State<Home> {
     CustomMarker(leftFraction: 0.32, topFraction: 0.24, info: 'Unidad de vinculación', info2: 'Vinculacion', info3: 'Unidad de vinculacion')
   ];
 
-  String searchQuery = '';
-
+ 
   @override
   Widget build(BuildContext context) {
+
+    String searchQuery = widget.searchQuery;
+
+
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -64,7 +71,7 @@ class _HomeState extends State<Home> {
                         marker.info.toLowerCase() == searchQuery.toLowerCase() ||
                         marker.info2.toLowerCase() == searchQuery.toLowerCase() ||
                         marker.info3.toLowerCase() == searchQuery.toLowerCase())
-                    .map((marker) {
+                    .map((marker)  {
                   return Positioned(
                     left: MediaQuery.of(context).size.width * marker.leftFraction,
                     top: MediaQuery.of(context).size.height * marker.topFraction,
